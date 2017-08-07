@@ -52,7 +52,7 @@
              // initialize the map on the "map" div with a given center and zoom
             this.map = L.map('map').setView(init_position, 15);
             // Add Tile Layer
-            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(this.map);
