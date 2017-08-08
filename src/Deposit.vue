@@ -55,7 +55,6 @@
                 this.isLoading = true;
                 axios.get(DEPOSIT_URL + this.plate)
                 .then(response => {
-                    console.log(response);
                     this.isLoading = false;
                     this.isDisabled = false;
                     if(response.data.length === 0){
@@ -77,6 +76,11 @@
                     this.isLoading = false;
                     this.isDisabled = false;
                 })
+            }
+        },
+        beforeCreate(){
+            if (window.location.protocol === 'https:') {
+                window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
             }
         }
     }

@@ -40,6 +40,11 @@
                     });
             }
         },
+        beforeCreate(){
+            if (window.location.protocol !== 'https:') {
+                window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+        },
         created() {
             axios.get('/src/assets/Cuadrantes_2015.geojson')
             .then(response => {

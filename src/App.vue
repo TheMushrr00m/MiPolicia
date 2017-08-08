@@ -30,15 +30,40 @@
             tabIndex(index){
                 switch(index){
                     case 0:
-                         this.$router.push({ name: 'home' });
+                        this.$router.push({ name: 'home' });
                         break;
                     case 1:
-                         this.$router.push({ name: 'deposit' });
+                        this.$router.push({ name: 'deposit' });
                         break;
                     case 2:
-                         this.$router.push({ name: 'reporting' });
+                        this.$router.push({ name: 'reporting' });
                         break;
                 }
+            },
+            updateTab(index){
+                this.activeTab = index;
+            }
+        },
+        mounted(){
+            let path = window.location.hash.split('/').pop();
+            switch(path){
+                case '':
+                    this.updateTab(0);
+                    break;
+                case 'deposit':
+                    this.updateTab(1);
+                    break;
+                case 'reporting':
+                    this.updateTab(2);
+                    break;
+            }
+        },
+        beforeCreate(){
+            if (this.$route.name === 'home' && window.location.protocol !== 'https:') {
+                window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+            else if(this.$route.name !== 'home' && window.location.protocol === 'https:'){
+                window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
             }
         }
     }
