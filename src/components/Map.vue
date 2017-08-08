@@ -40,11 +40,18 @@
                     this.layer = L.featureGroup(results).addTo(this.map);
                     this.map.flyTo(position, 17);
                     this.marker.bindPopup("<div class=\"marker-content\">" +
-                                          "<h1 class=\"marker-title\">Zona: " + results[0].feature.properties.Zona + "</h1>" +
-                                          "<p class=\"marker-subtitle\">Sector: " + results[0].feature.properties.Sector + "</p>" +
+                                          "<p class=\"marker-title\">Sector: " + results[0].feature.properties.Sector + "</p>" +
+                                          "<h1 class=\"marker-subtitle\">Zona: " + results[0].feature.properties.Zona + "</h1>" +
                                           "<p class=\"marker-text\"><b>Teléfono:</b> <a href=\"tel:" + results[0].feature.properties.Tel + "\">" + results[0].feature.properties.Tel + "</a></p>" +
                                           "<p class=\"marker-text\"><b>Nextel:</b> <a href=\"tel:" + results[0].feature.properties.Nextel + "\">" + results[0].feature.properties.Nextel + "</a></p>" +
                                           "</div>").openPopup();
+                } else {
+                    this.$snackbar.open({
+                        duration: 5000,
+                        message: 'No se encontró un cuadrante para la ubicación.',
+                        type: 'is-info',
+                        position: 'is-top'
+                    });
                 }
             }
         },
