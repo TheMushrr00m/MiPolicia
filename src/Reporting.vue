@@ -1,7 +1,7 @@
 <template>
     <div class="soon">
         <b-icon class="soon-icon" icon="watch_later"></b-icon>
-        <p>Próximamente...</p>
+        <p class="soon-text">Próximamente...</p>
         <button class="button soon-button" v-on:click="soonClick">¡Quiero esta característica!</button>
     </div>
 </template>
@@ -37,6 +37,9 @@
     }
     .soon-icon{
         margin-bottom: 0.5em;
+    }
+    .soon-text{
+        pading-bottom: 1.5em;
     }
     .soon-button{
         background-color: #00243C;
