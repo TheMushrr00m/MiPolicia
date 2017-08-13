@@ -40,10 +40,16 @@
                     this.layer = L.featureGroup(results).addTo(this.map);
                     this.map.flyTo(position, 17);
                     this.marker.bindPopup("<div class=\"marker-content\">" +
-                                          "<p class=\"marker-title\">Sector: " + results[0].feature.properties.Sector + "</p>" +
-                                          "<h1 class=\"marker-subtitle\">Zona: " + results[0].feature.properties.Zona + "</h1>" +
-                                          "<p class=\"marker-text\"><b>Teléfono:</b> <a href=\"tel:" + results[0].feature.properties.Tel + "\">" + results[0].feature.properties.Tel + "</a></p>" +
-                                          "<p class=\"marker-text\"><b>Nextel:</b> <a href=\"tel:" + results[0].feature.properties.Nextel + "\">" + results[0].feature.properties.Nextel + "</a></p>" +
+                                          "<div class=\"details\">" +
+                                          "<h1 class=\"marker-title\">" + 'Tu cuadrante es del sector <b>'  + results[0].feature.properties.Sector.toLowerCase().replace( /\b./g, (a) => { return a.toUpperCase(); } ) + "</b><br>" +
+                                          ' en la zona <b>' + results[0].feature.properties.Zona.toLowerCase().replace( /\b./g, (a) => { return a.toUpperCase(); } ) + '</b>.<br>' +
+                                          "</h1>" +
+                                          "<p class=\"marker-subtitle\">Para marcar y solicitar apoyo presiona <br> cualquiera de las siguientes opciones:</p>" +
+                                          "</div>" +
+                                          "<div class='button-container'>" +
+                                          "<button onclick=window.location.href='tel:" + results[0].feature.properties.Tel + "\'" + " class=\"button-marker with-margin\" target=\"_blank\">Teléfono del cuadrante</button>" +
+                                          "<button onclick=window.location.href='tel:911' class=\"button-marker\" target=\"_blank\">911</button>" +
+                                          "</div>" +
                                           "</div>").openPopup();
                 } else {
                     this.$snackbar.open({
@@ -75,21 +81,45 @@
 <style lang="scss">
     @import "~leaflet/dist/leaflet.css";
 
+    .button-marker{
+        height: 3.2em;
+        width: 7.8em;
+        background: #00243C;
+        color: white !important;
+        border-radius: 3px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+        border: none;
+        cursor: pointer;
+
+        &.with-margin{
+            margin-right: 3.8em;
+        }
+    }
+    .button-container{
+        margin-bottom: 1.2em;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .details{
+        margin-bottom: 1.1em;
+    }
     .leaflet-popup-content-wrapper{
         border-radius: 0;
     }
     .marker-content{
         .marker-title{
             margin-top: 0;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.2em;
             font-size: 1.2em;
             color: #00243C;
         }
         .marker-subtitle{
-            margin-top: 0;
+            margin-top: 0.8em;
             margin-bottom: 0.5em;
             font-size: 1em;
-            color: darkgrey;
+            color: grey;
+            font-weight: bold;
         }
         .marker-text{
             margin-top: 0;

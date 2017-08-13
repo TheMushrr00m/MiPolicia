@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="search-container">
-            <p class="text-centered margin-bottom">Para buscar tu automóvil introduce tus placas:</p>
+            <p class="text-centered margin-bottom">Para conocer si tu automóvil fue remitido a un corralón introduce las placas en el siguiente diálogo y después presiona buscar</p>
             <b-field position="is-centered">
                 <b-input placeholder="Búsqueda..."
                     type="search"

@@ -9,10 +9,17 @@
         data(){
             return{
                 json_data: {},
-                markerPosition: []
+                markerPosition: [],
+                loadingComponent: null
             }
         },
         methods:{
+            openLoading() {
+                this.loadingComponent = this.$loading.open();
+            },
+            closeLoading(){
+                this.loadingComponent.close();
+            },
             updateMarkerPosition(lat, long){
                 this.markerPosition = [];
                 this.markerPosition.push(lat);
@@ -24,6 +31,7 @@
             getLocation(){
                 getPosition()
                     .then((position) => {
+                        this.closeLoading();
                         this.updateMarkerPosition(position.coords.latitude, position.coords.longitude);
                         this.showMatchedPolygon(this.json_data);
                     })
@@ -34,6 +42,7 @@
                             type: 'is-info',
                             position: 'is-top'
                         });
+                        this.closeLoading();
                         this.updateMarkerPosition(19.4324905, -99.1333819); //CDMX Zócalo
                         this.showMatchedPolygon(this.json_data);
                         console.error(err.message);
@@ -41,15 +50,17 @@
             }
         },
         beforeCreate(){
-            if (window.location.protocol !== 'https:') {
+           if (window.location.protocol !== 'https:') {
                 window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-            }
+           }
         },
         created() {
+            this.openLoading();
             axios.get('/src/assets/Cuadrantes_2015.geojson')
             .then(response => {
                 getPosition()
                     .then((position) => {
+                        this.closeLoading();
                         this.updateMarkerPosition(position.coords.latitude, position.coords.longitude);
                         this.showMatchedPolygon(response.data);
                     })
@@ -64,6 +75,7 @@
                                 this.getLocation();
                             }
                         });
+                        this.closeLoading();
                         this.updateMarkerPosition(19.4324905, -99.1333819); //CDMX Zócalo
                         this.showMatchedPolygon(response.data);
                         console.error(err.message);
@@ -75,6 +87,7 @@
                     message: 'Algo falló, recarga la página.',
                     type: 'is-danger'
                 });
+                this.closeLoading();
                 console.log(e)
             })
         }
@@ -92,5 +105,13 @@
 <style lang="scss">
     #map{
         height: 100%;
+    }
+
+    .loading-overlay .loading-icon:after {
+        border-left-color: #00243C;
+        border-bottom-color: #00243C;
+    }
+    .loading-overlay {
+        z-index: 9999;
     }
 </style>
