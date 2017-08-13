@@ -47,8 +47,8 @@
                                           "<p class=\"marker-subtitle\">Para marcar y solicitar apoyo presiona <br> cualquiera de las siguientes opciones:</p>" +
                                           "</div>" +
                                           "<div class='button-container'>" +
-                                          "<button onclick=window.location.href='tel:" + results[0].feature.properties.Tel + "\'" + " class=\"button-marker with-margin\" target=\"_blank\">Teléfono del cuadrante</button>" +
-                                          "<button onclick=window.location.href='tel:911' class=\"button-marker\" target=\"_blank\">911</button>" +
+                                          "<button onclick=window.location.href='tel:" + results[0].feature.properties.Tel + "\'" + " class=\"button-marker with-margin\" target=\"_blank\">Llamar al cuadrante</button>" +
+                                          "<button onclick=window.location.href='tel:911' class=\"button-marker\" target=\"_blank\">Llamar al 911</button>" +
                                           "</div>" +
                                           "</div>").openPopup();
                 } else {
@@ -83,7 +83,7 @@
 
     .button-marker{
         height: 3.2em;
-        width: 7.8em;
+        width: 8em;
         background: #00243C;
         color: white !important;
         border-radius: 3px;

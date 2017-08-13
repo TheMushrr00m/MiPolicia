@@ -71,6 +71,7 @@
 
 <style lang="scss">
     @import '~buefy/lib/buefy.css';
+    @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
     html, body, #app{
         height: 100%;
@@ -107,14 +108,13 @@
         .tabs.is-toggle a {
             border: none;
             background-color: whitesmoke;
+            border-radius: 0;
         }
         .tabs.is-toggle a:hover{
             background-color: #efefef;
         }
         .tabs.is-toggle li.is-active a{
             background-color: #00243C;
-        }
-        .tabs.is-toggle li:first-child a{
             border-radius: 0;
         }
     }
