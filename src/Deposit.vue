@@ -51,6 +51,7 @@
         },
         methods:{
             search(){
+                ga('send', 'event', 'Corralon', 'busqueda', this.plate);
                 this.isDisabled = true;
                 this.isLoading = true;
                 axios.get(DEPOSIT_URL + this.plate)

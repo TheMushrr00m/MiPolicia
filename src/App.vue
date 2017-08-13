@@ -30,12 +30,15 @@
             tabIndex(index){
                 switch(index){
                     case 0:
+                        ga('send', 'event', 'Pagina', 'click', 'Cuadrante');
                         this.$router.push({ name: 'home' });
                         break;
                     case 1:
+                        ga('send', 'event', 'Pagina', 'click', 'Corralon');
                         this.$router.push({ name: 'deposit' });
                         break;
                     case 2:
+                        ga('send', 'event', 'Pagina', 'click', 'Denuncia');
                         this.$router.push({ name: 'reporting' });
                         break;
                 }
