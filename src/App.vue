@@ -1,7 +1,8 @@
 <template>
     <div id="app">
         <div class="header">
-                <h1>Mi Policía</h1>
+            <h1>Mi Policía</h1>
+            <i v-on:click="cardModal" class="material-icons">help_outline</i>
         </div>
         <div class="main-content">
             <div class="menu">
@@ -43,6 +44,36 @@
                         break;
                 }
             },
+            cardModal() {
+                console.log('click');
+                this.$modal.open({
+                    width: 640,
+                    content: `<div class="card">
+                        <div class="card-content">
+                            <div class="media-content">
+                                <p class="title is-4">Mi Policía</p>
+                                <p class="subtitle is-6">twitter: @tello_io</p>
+                            </div>
+                            <div class="content">
+                                Esta es una aplicación de ciudadanos mexicanos que está pensada
+                                para funcionar únicamente en la Ciudad de México.<br>
+                                La aplicación web fue desarrollada con ayuda de la información
+                                abierta de la Secretaría de Seguridad Pública de la Ciudad de México.<br>
+                                Toda la información puede ser encontrada en <a href="http://datos.labcd.mx">Laboratorio de Datos</a>
+                                como parte de la estrategia de gobierno abierto del <a href="http://labcd.mx">Laboratorio para la Ciudad</a>.<br>
+                                Si tienes alguna pregunta relacionada a la información o las licencias de uso puedes enviar un correo
+                                electrónico a laboratorio [-at-] labcd.mx
+                                <br><br>
+                                Cualquier marca relacionada al Gobierno de la Ciudad de México pertenece al Gobierno de la Ciudad de México.<br>
+                                En su totalidad esta es una aplicación gratuita de licenciamiento abierto y sin ningún fin de lucro.<br>
+                                La información recabada solo es utilizaa para fines estadísticos y no será utilizada o compartida para ningún otro fin.
+                                <br><br>
+                                <small>18:30 PM - 13 Agosto 2017</small>
+                            </div>
+                        </div>
+                    </div>`
+                })
+            },
             updateTab(index){
                 this.activeTab = index;
             }
@@ -62,12 +93,12 @@
             }
         },
         beforeCreate(){
-            if (this.$route.name === 'home' && window.location.protocol !== 'https:') {
+            /*if (this.$route.name === 'home' && window.location.protocol !== 'https:') {
                 window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
             else if(this.$route.name !== 'home' && window.location.protocol === 'https:'){
                 window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
-            }
+            }*/
         }
     }
 </script>
@@ -123,5 +154,17 @@
     }
     .content{
         flex: 100;
+    }
+    .header .material-icons{
+        font-size: 1em;
+        right: 0;
+        padding-right: 1em;
+        position: absolute;
+    }
+    .modal{
+        z-index: 9999;
+    }
+    .card-content .content{
+        margin-top: 1em;
     }
 </style>
