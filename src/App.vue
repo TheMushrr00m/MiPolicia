@@ -74,7 +74,7 @@
 
 <style lang="scss">
     @import '~buefy/lib/buefy.css';
-    @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
     html, body, #app{
         height: 100%;
