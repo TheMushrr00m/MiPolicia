@@ -93,12 +93,12 @@
             }
         },
         beforeCreate(){
-            /*if (this.$route.name === 'home' && window.location.protocol !== 'https:') {
+            if (this.$route.name === 'home' && window.location.protocol !== 'https:') {
                 window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
             else if(this.$route.name !== 'home' && window.location.protocol === 'https:'){
                 window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
-            }*/
+            }
         }
     }
 </script>
@@ -165,6 +165,7 @@
         z-index: 9999;
     }
     .card-content .content{
+        text-align: justify;
         margin-top: 1em;
     }
 </style>
