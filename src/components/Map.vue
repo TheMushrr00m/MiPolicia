@@ -19,7 +19,6 @@
         },
         watch:{
             'markerPosition': function(value) {
-                console.log('marker position changed!');
                 this.marker.setLatLng(value);
             },
             'geojson': function(geojson){
@@ -33,7 +32,6 @@
                 const position = this.marker.getLatLng();
                 let results = leafletPip.pointInLayer(position, gjLayer, true);
                 if (results.length > 0){
-                    console.log(results);
                     if(this.layer) {
                         this.map.removeLayer(this.layer);
                     }

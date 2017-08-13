@@ -12,7 +12,6 @@
             }
         },
         mounted(){
-            console.log(this.markerPosition);
              // initialize the map on the "map" div with a given center and zoom
             this.map = L.map(this.id).setView([this.markerPosition.lat, this.markerPosition.lng], 14.5);
             this.map.dragging.disable();
