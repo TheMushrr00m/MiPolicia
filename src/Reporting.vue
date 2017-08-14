@@ -43,7 +43,7 @@
         margin-bottom: 0.5em;
     }
     .soon-text{
-        pading-bottom: 1.5em;
+        padding-bottom: 1.5em;
     }
     .soon-button{
         background-color: #00243C;
