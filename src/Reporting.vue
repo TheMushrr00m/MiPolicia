@@ -15,7 +15,11 @@
         },
         methods:{
             soonClick(){
-                ga('send', 'event', 'Proximamente', 'click', 'Quiero');
+                try {
+                    ga('send', 'event', 'Proximamente', 'click', 'Quiero');
+                } catch (e) {
+                    console.log(e);
+                }
                 this.$snackbar.open({
                     duration: 5000,
                     message: 'Gracias por tu interés, le informaremos a la SSP que te gustaría tener esta característica en el sitio.',

@@ -31,15 +31,27 @@
             tabIndex(index){
                 switch(index){
                     case 0:
-                        ga('send', 'event', 'Pagina', 'click', 'Cuadrante');
+                        try{
+                            ga('send', 'event', 'Pagina', 'click', 'Cuadrante');
+                        } catch (e) {
+                            console.log(e);
+                        }
                         this.$router.push({ name: 'home' });
                         break;
                     case 1:
-                        ga('send', 'event', 'Pagina', 'click', 'Corralon');
+                        try{
+                            ga('send', 'event', 'Pagina', 'click', 'Corralon');
+                        } catch (e) {
+                            console.log(e);
+                        }
                         this.$router.push({ name: 'deposit' });
                         break;
                     case 2:
-                        ga('send', 'event', 'Pagina', 'click', 'Denuncia');
+                        try {
+                            ga('send', 'event', 'Pagina', 'click', 'Denuncia');
+                        } catch (e) {
+                            console.log(e);
+                        }
                         this.$router.push({ name: 'reporting' });
                         break;
                 }
@@ -66,7 +78,7 @@
                                 <br><br>
                                 Cualquier marca relacionada al Gobierno de la Ciudad de México pertenece al Gobierno de la Ciudad de México.<br>
                                 En su totalidad esta es una aplicación gratuita de licenciamiento abierto y sin ningún fin de lucro.<br>
-                                La información recabada solo es utilizaa para fines estadísticos y no será utilizada o compartida para ningún otro fin.
+                                La información recabada solo es utilizada para fines estadísticos y no será utilizada o compartida para ningún otro fin.
                                 <br><br>
                                 <small>18:30 PM - 13 Agosto 2017</small>
                             </div>

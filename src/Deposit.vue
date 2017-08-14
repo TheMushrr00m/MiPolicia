@@ -51,7 +51,11 @@
         },
         methods:{
             search(){
-                ga('send', 'event', 'Corralon', 'busqueda', this.plate);
+                try{
+                    ga('send', 'event', 'Corralon', 'busqueda', this.plate);
+                } catch (e){
+                    console.log(e);
+                }
                 this.isDisabled = true;
                 this.isLoading = true;
                 axios.get(DEPOSIT_URL + this.plate)
