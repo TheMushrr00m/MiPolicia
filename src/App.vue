@@ -32,7 +32,10 @@
                 switch(index){
                     case 0:
                         try{
-                            ga('send', 'event', 'Pagina', 'click', 'Cuadrante');
+                          this.$ga.event({eventCategory: 'Pagina',
+                                          eventAction: 'click',
+                                          eventLabel: 'Cuadrante',
+                                          eventValue: 1});
                         } catch (e) {
                             console.log(e);
                         }
@@ -40,7 +43,10 @@
                         break;
                     case 1:
                         try{
-                            ga('send', 'event', 'Pagina', 'click', 'Corralon');
+                          this.$ga.event({eventCategory: 'Pagina',
+                                          eventAction: 'click',
+                                          eventLabel: 'Corralon',
+                                          eventValue: 1});
                         } catch (e) {
                             console.log(e);
                         }
@@ -48,7 +54,10 @@
                         break;
                     case 2:
                         try {
-                            ga('send', 'event', 'Pagina', 'click', 'Denuncia');
+                          this.$ga.event({eventCategory: 'Pagina',
+                                          eventAction: 'click',
+                                          eventLabel: 'Denuncia',
+                                          eventValue: 1});
                         } catch (e) {
                             console.log(e);
                         }

@@ -52,7 +52,10 @@
         methods:{
             search(){
                 try{
-                    ga('send', 'event', 'Corralon', 'busqueda', this.plate);
+                    this.$ga.event({eventCategory: 'Corralon',
+                                    eventAction: 'busqueda',
+                                    eventLabel: this.plate,
+                                    eventValue: 1});
                 } catch (e){
                     console.log(e);
                 }

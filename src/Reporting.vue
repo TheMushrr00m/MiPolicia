@@ -16,7 +16,10 @@
         methods:{
             soonClick(){
                 try {
-                    ga('send', 'event', 'Proximamente', 'click', 'Quiero');
+                  this.$ga.event({eventCategory: 'Proximamente',
+                                  eventAction: 'click',
+                                  eventLabel: 'Quiero',
+                                  eventValue: 1});
                 } catch (e) {
                     console.log(e);
                 }
