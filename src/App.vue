@@ -1,8 +1,8 @@
 <template>
     <div id="app">
         <div class="header">
-            <h1>Mi Policía</h1>
-            <i v-on:click="cardModal" class="material-icons">help_outline</i>
+            <h1><sub class="title">▀</sub><sup class="title">▀</sup><span class="text-light bigger">&ensp;MI</span> <span class="text-bold bigger">POLICÍA&ensp;</span><sup class="title">▀</sup><sub class="title">▀</sub></h1>
+            <i v-on:click="cardModal" class="clickable bigger material-icons">help_outline</i>
         </div>
         <div class="main-content">
             <div class="menu">
@@ -134,20 +134,20 @@
         font-family: 'Roboto', sans-serif;
     }
 
-    html, body, #app{
+    html, body, #app {
         height: 100%;
         width: 100%;
         margin: 0;
         background-color: #efefef;
     }
-    .main-content{
+    .main-content {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
     }
-    .header{
-        height: 26px;
+    .header {
+        height: 46px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -157,12 +157,30 @@
         h1{
             margin: 0;
         }
+        .title {
+            color: white;
+            font-size: 1em;
+        }
+        .text-light {
+            font-weight: 300;
+            vertical-align: text-bottom;
+        }
+        .text-bold {
+            font-weight: 700;
+            vertical-align: text-bottom;
+        }
+        .clickable {
+            cursor: pointer;
+        }
+        .bigger{
+            font-size: 1.4em !important;
+        }
     }
-    .menu{
-        flex: 5;
-        .b-tabs{
+    .menu {
+        height: 46px;
+        .b-tabs {
             height: 100%;
-            nav, li, a{
+            nav, li, a {
                 height: 100%;
             }
         }
@@ -171,27 +189,27 @@
             background-color: whitesmoke;
             border-radius: 0;
         }
-        .tabs.is-toggle a:hover{
+        .tabs.is-toggle a:hover {
             background-color: #efefef;
         }
-        .tabs.is-toggle li.is-active a{
+        .tabs.is-toggle li.is-active a {
             background-color: #00243C;
             border-radius: 0;
         }
     }
-    .content{
-        flex: 100;
+    .content {
+        flex: 1;
     }
-    .header .material-icons{
+    .header .material-icons {
         font-size: 1em;
         right: 0;
         padding-right: 1em;
         position: absolute;
     }
-    .modal{
+    .modal {
         z-index: 9999;
     }
-    .card-content .content{
+    .card-content .content {
         text-align: justify;
         margin-top: 1em;
     }
