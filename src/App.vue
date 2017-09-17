@@ -73,7 +73,7 @@
                         <div class="card-content">
                             <div class="media-content">
                                 <p class="title is-4">Mi Policía</p>
-                                <p class="subtitle is-6">twitter: @tello_io</p>
+                                <p class="subtitle is-6"><a href="https://twitter.com/tello_io" target="_blank">twitter: @tello_io</a></p>
                             </div>
                             <div class="content">
                                 Esta es una aplicación de ciudadanos mexicanos que está pensada
