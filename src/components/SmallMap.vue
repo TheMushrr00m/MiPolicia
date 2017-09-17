@@ -25,7 +25,7 @@
             const icon = new L.Icon.Default();
             icon.options.shadowSize = [0,0];
             this.marker = L.marker([this.markerPosition.lat, this.markerPosition.lng], {icon : icon, draggable: false}).addTo(this.map);
-            this.marker.bindPopup("<a href=\"https://www.google.com/maps/dir/Current+Location/" + this.markerPosition.lat + "," + this.markerPosition.lng + "\" target=\"_blank\" class=\"button-marker\">CÓMO LLEGAR</a>").openPopup();
+            this.marker.bindPopup("<a href=\"https://www.google.com/maps/dir/Current+Location/" + this.markerPosition.lat + "," + this.markerPosition.lng + "\" target=\"_blank\" class=\"button-marker\">¿CÓMO LLEGAR?</a>").openPopup();
         }
     }
 </script>

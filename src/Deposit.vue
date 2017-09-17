@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="container is-fluid">
         <div class="search-container">
-            <p class="text-centered margin-bottom">Para conocer si tu automóvil fue remitido a un corralón introduce las placas en el siguiente diálogo y después presiona buscar</p>
+            <p class="text-centered margin-bottom margin-sides">Para conocer si tu automóvil fue remitido a un corralón introduce las placas en el siguiente diálogo y después presiona buscar</p>
             <b-field position="is-centered">
                 <b-input placeholder="Búsqueda..."
                     type="search"
@@ -87,45 +87,49 @@
             }
         },
         beforeCreate(){
-            if (window.location.protocol === 'https:') {
-                window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
-            }
+            // if (window.location.protocol === 'https:') {
+            //     window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
+            // }
         }
     }
 </script>
 
-<style>
-    .content p:not(:last-child){
+<style lang="scss">
+    .content p:not(:last-child) {
         margin: 0;
     }
-    .container{
+    .container {
         margin: 2em auto;
     }
-    .text-centered{
+    .text-centered {
         text-align: center;
     }
-    .margin-bottom{
-        margin-bottom: 1em !important;
+    .margin-bottom {
+        margin-bottom: 1.8em !important;
     }
-    .search-container{
+    .margin-sides {
+        margin-left: 1em !important;
+        margin-right: 1em !important;
+    }
+    .search-container {
         margin-bottom: 3em;
     }
-    .response-container{
+    .response-container {
         margin: 0 2em;
     }
-    .subtitle{
+    .subtitle {
         font-size: 1em;
         color: darkgrey;
     }
-    .panel-heading{
+    .panel-heading {
         font-weight: bold;
         background-color: #00243C;
         color: white !important;
     }
-    .panel-content{
+    .panel-content {
         background-color: whitesmoke;
     }
-    .panel-block{
+    .panel-block {
         padding: 1em;
     }
 </style>

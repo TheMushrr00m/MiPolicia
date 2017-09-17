@@ -114,12 +114,12 @@
             }
         },
         beforeCreate(){
-            if (this.$route.name === 'home' && window.location.protocol !== 'https:') {
-                window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-            }
-            else if(this.$route.name !== 'home' && window.location.protocol === 'https:'){
-                window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
-            }
+            // if (this.$route.name === 'home' && window.location.protocol !== 'https:') {
+            //     window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            // }
+            // else if(this.$route.name !== 'home' && window.location.protocol === 'https:'){
+            //     window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
+            // }
         }
     }
 </script>
@@ -128,6 +128,11 @@
     @import '~buefy/lib/buefy.css';
     @import '~font-awesome/css/font-awesome.css';
     @import '~material-design-icons/iconfont/material-icons.css';
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
 
     html, body, #app{
         height: 100%;
