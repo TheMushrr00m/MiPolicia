@@ -114,12 +114,12 @@
             }
         },
         beforeCreate(){
-            // if (this.$route.name === 'home' && window.location.protocol !== 'https:') {
-            //     window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-            // }
-            // else if(this.$route.name !== 'home' && window.location.protocol === 'https:'){
-            //     window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
-            // }
+            if (this.$route.name === 'home' && window.location.protocol !== 'https:') {
+                window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+            else if(this.$route.name !== 'home' && window.location.protocol === 'https:'){
+                window.location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
+            }
         }
     }
 </script>
